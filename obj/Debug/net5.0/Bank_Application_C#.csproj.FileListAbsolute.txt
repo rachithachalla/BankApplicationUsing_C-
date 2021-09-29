@@ -1,0 +1,16 @@
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.exe
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.deps.json
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.runtimeconfig.json
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.runtimeconfig.dev.json
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.dll
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\ref\Bank_Application_C#.dll
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\bin\Debug\net5.0\Bank_Application_C#.pdb
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.csproj.AssemblyReference.cache
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.AssemblyInfoInputs.cache
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.AssemblyInfo.cs
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.csproj.CoreCompileInputs.cache
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.dll
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\ref\Bank_Application_C#.dll
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.pdb
+C:\Users\Sai\OneDrive\Desktop\Technover_Internship\Bank_Application_C#\obj\Debug\net5.0\Bank_Application_C#.genruntimeconfig.cache
