@@ -52,21 +52,22 @@ namespace Bank_Application_C_
     }
     class Program
     {
+        //int c;
+        //int idx=0;
+        static int [] acc = new int[10];
+        static string[] accName = new string[10];
+        static int [] amt = new int[10];
+        static int [] pin = new int[10];
+        static int [] tId = new int[10];
+        static string [,] desc = new string[10,10];
+        static int [,] tamt = new int[10,10];
+        static string [,] tm = new string[10,10];
+        static int [,] trs = new int[10,10];  
+        //Account ac = new Account();
         static void Main(string[] args)
         {
             int c;
             int idx=0;
-            int [] acc = new int[10];
-            string[] accName = new string[10];
-            int [] amt = new int[10];
-            int [] pin = new int[10];
-
-            int [] tId = new int[10];
-            string [,] desc = new string[10,10];
-            int [,] tamt = new int[10,10];
-            string [,] tm = new string[10,10];
-
-            int [,] trs = new int[10,10];  
             Account ac = new Account();
             do{ 
                 Console.WriteLine("Select the function");
@@ -100,7 +101,7 @@ namespace Bank_Application_C_
                         ac.depositeAmount(acc,pin,amt,accNo,p);
                         trs[accNo,tId[accNo]] = accNo;
                         desc[accNo,tId[accNo]] = "deposit";
-                        tamt[accNo,tId[accNo]] = ac.amt;
+                        tamt[accNo,tId[accNo]] = amt[accNo];
                         tm[accNo,tId[accNo]] = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
                         tId[accNo]++;
                         break;
@@ -111,9 +112,9 @@ namespace Bank_Application_C_
                         Console.WriteLine("Enter your pin: ");
                         int p1 = Convert.ToInt32(Console.ReadLine());
                         ac.withdrawAmount(acc,pin,amt,accNo1,p1);
-                        trs[accNo,tId[accNo1]] = accNo1;
+                        trs[accNo1,tId[accNo1]] = accNo1;
                         desc[accNo1,tId[accNo1]] = "withdrawl";
-                        tamt[accNo1,tId[accNo1]] = ac.amt;
+                        tamt[accNo1,tId[accNo1]] = amt[accNo1];
                         tm[accNo1,tId[accNo1]] = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
                         tId[accNo1]++;
                         break;
@@ -139,41 +140,69 @@ namespace Bank_Application_C_
                     Console.WriteLine("Enter your pin: ");
                     int p = Convert.ToInt32(Console.ReadLine());
                     for(int i=0;i<10;i++){
+                        int f2 = 0,f1=0;
                         if(acc[i]==accNo){
                             if(pin[i]==p){
                                 Console.WriteLine("Enter to Account number: ");
                                 int toAccNo = Convert.ToInt32(Console.ReadLine());
                                 Console.WriteLine("Enter amount: ");
                                 int amount = Convert.ToInt32(Console.ReadLine());
+                                f2 = 1;
                                 for(int j=0;j<10;j++){
                                     if(acc[j] == toAccNo){
                                         amt[toAccNo] += amount; 
                                         amt[i] -= amount;
                                         trs[accNo,tId[toAccNo]] = toAccNo;
-                                        desc[accNo1] = "withdrawl";
-                                        tamt[accNo1] = ac.amt;
-                                        tm[accNo1] = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
-                                        trs[accNo1]++;
-
-                                    }
+                                        desc[accNo,tId[toAccNo]] = "transfer";
+                                        tamt[accNo,tId[toAccNo]] = amount;
+                                        tm[accNo,tId[toAccNo]] = DateTime.Now.ToString("MM/dd/yyyy h:mm tt");
+                                        tId[accNo]++;
+                                        f1 = 1;
+                                        break;
+                                    } 
                                 }
-                                Console.WriteLine("Enter amount: ");
-                                int amount = Convert.ToInt32(Console.ReadLine());
-
                             } else {
                                 Console.WriteLine("Invalid Pin!!");
                                 break;
                             }
-                        } else {
-                            Console.WriteLine("Account does not Exist!!");
+                        } 
+                        if(f2==0 || f1 == 0){
+                            Console.WriteLine("Account does not exist!!");
                         }
                     }
 
                 }
                 static void transactionHistory(){
-
+                    int accNo;
+                    Console.WriteLine("Enter Your Account Number: ");
+                    accNo = Convert.ToInt32(Console.ReadLine());
+                    Console.WriteLine("Enter your pin: ");
+                    int p = Convert.ToInt32(Console.ReadLine());
+                    int f3=0;
+                    for(int i=0;i<10;i++){
+                        if(acc[i]==accNo){
+                            if(pin[i]==p){
+                                Console.WriteLine("Account: "+accNo+ " Trasaction History");
+                                for(int t = 0; t<tId[accNo];t++){
+                                    Console.WriteLine("Description: " + desc[accNo,t]);
+                                    Console.WriteLine("Amount: " + tamt[accNo,t]);
+                                    Console.WriteLine("Time: "+ tm[accNo,t]);
+                                    Console.WriteLine("To");
+                                    Console.WriteLine(acc[trs[accNo,t]]);
+                                }
+                                f3 = 1;
+                                break;
+                            }else{
+                                Console.WriteLine("Invalid Pin!!");
+                                break;
+                            }
+                        }
+                    }
+                    if(f3 == 0){
+                        Console.WriteLine("Account does not exist!!");
+                    }
                 }
 
             }
+        }
     }
-}
